@@ -50,7 +50,6 @@ function CustomTokenInput({
 
   return (
     <div className="text-left mb-4">
-      {value}
       <label className="font-[500] mb-4">{label}</label>
       <div className="flex gap-2">
         {Array.from({ length: numberOfChars }, (_, i) => i).map(
