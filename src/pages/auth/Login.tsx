@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import CustomInputField from "../../commons/CustomInputField";
 import CustomButton from "../../commons/CustomButton";
 import CustomTokenInput from "../../commons/CustomTokenInput";
+import { Form, Formik } from "formik";
 
 function Login() {
-
-    const [token, setToken] = useState("")
+  const [token, setToken] = useState("");
 
   return (
     <div className="">
@@ -19,31 +19,35 @@ function Login() {
               Enter credentials to login
             </p>
 
-            <CustomInputField
-              type="text"
-              placeholder="Enter your username"
-              name="username"
-              label="Username"
-            />
+            <Formik initialValues={{}} onSubmit={(values) => {
+              
+            }}>
+              <Form>
+                <CustomInputField
+                  type="text"
+                  placeholder="Enter your username"
+                  name="username"
+                  label="Username"
+                />
 
-            <CustomInputField
-              type="password"
-              placeholder="Enter your password"
-              name="password"
-              label="Password"
-            />
+                <CustomInputField
+                  type="password"
+                  placeholder="Enter your password"
+                  name="password"
+                  label="Password"
+                />
 
-            <CustomTokenInput value={token} onChange={setToken} name="token" numberOfChars={8} label="Token" />
+                <CustomTokenInput
+                  value={token}
+                  onChange={setToken}
+                  name="token"
+                  numberOfChars={8}
+                  label="Token"
+                />
 
-            {/* <CustomInputField
-              type="text"
-              placeholder="Enter your token"
-              name="token"
-              label="Token"
-            /> */}
-
-            <CustomButton type={"submit"} label="Submit" />
-
+                <CustomButton type={"submit"} label="Submit" />
+              </Form>
+            </Formik>
           </div>
         </div>
         <div className="w-1/2">

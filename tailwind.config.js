@@ -11,7 +11,8 @@ module.exports = {
       success: "#90CA7D",
       gray: "#D9D9D9",
       info: "#47A4CB",
-      white: "white"
+      white: "white",
+      whitesmoke: "#f7f7f7",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
